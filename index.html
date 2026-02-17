@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIDLINE HUB | Premium Script</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.15) 0, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 255, 255, 0.1) 0, transparent 50%);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hub-container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+        }
+
+        .header-image { display: flex; justify-content: center; margin-bottom: 25px; }
+        .header-image img { width: 220px; border-radius: 30px; border: 2px solid rgba(0, 102, 255, 0.4); box-shadow: 0 0 40px rgba(0, 102, 255, 0.2); }
+
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; background: linear-gradient(to bottom, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+        
+        /* TAG NO KEY STYLE */
+        .no-key-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #22c55e, #10b981);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(34, 197, 94, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+        }
+
+        .promo-text { color: #00d4ff; font-weight: 700; font-size: 1rem; margin-bottom: 35px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* GAME LINK BUTTON */
+        .game-link-container { margin-bottom: 35px; }
+        .btn-game-link {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 20px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+        }
+        .btn-game-link:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4); }
+
+        /* CREDITS SECTION */
+        .credits-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 35px; text-align: left; margin-bottom: 35px; }
+        .credits-card h3 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 2px; color: #7c83ff; margin-bottom: 25px; text-transform: uppercase; }
+        .credits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .credit-item p { font-weight: 700; font-size: 1.1rem; color: #fff; }
+        .credit-item h4 { font-size: 0.7rem; color: #64748b; text-transform: uppercase; }
+
+        /* SOCIAL MEDIA */
+        .social-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .btn-social { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; border-radius: 18px; text-decoration: none; color: white; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
+        .discord { background: #5865f2; }
+        .whatsapp { background: #25d366; }
+        .tiktok { background: #000; border: 1px solid #fff; }
+
+        /* FEEDBACK SECTION */
+        .feedback-section { background: rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 30px; text-align: left; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .feedback-section h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #00d4ff; margin-bottom: 20px; }
+        .feedback-form input, .feedback-form textarea { width: 100%; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 12px 15px; color: white; margin-bottom: 15px; outline: none; }
+        .feedback-form textarea { height: 80px; resize: none; }
+        .btn-send { background: linear-gradient(90deg, #0066ff, #00d4ff); color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s; margin-bottom: 30px; }
+        
+        /* COMMENTS BOX */
+        .comments-display { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; }
+        .comment-item { background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 15px; margin-bottom: 10px; border-left: 4px solid #00d4ff; animation: fadeIn 0.5s ease; }
+        .comment-item b { color: #00d4ff; display: block; font-size: 0.9rem; margin-bottom: 5px; }
+        .comment-item p { font-size: 0.85rem; color: #cbd5e1; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .footer { margin-top: 40px; color: #475569; font-size: 0.7rem; letter-spacing: 2px; }
+
+        /* TOAST NOTIFICATION */
+        #toast {
+            visibility: hidden; min-width: 250px; background-color: #22c55e; color: #fff; text-align: center; border-radius: 10px; padding: 16px;
+            position: fixed; z-index: 100; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 0.9rem; font-weight: 600;
+        }
+        #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+
+        @media (max-width: 600px) { h1 { font-size: 2.2rem; } .credits-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="hub-container">
+        <div class="header-image">
+            <img src="IMG-20260217-WA0121.jpg" alt="Voidline Logo">
+        </div>
+
+        <h1>VOIDLINE HUB</h1>
+        <div class="no-key-tag">NO KEY SYSTEM</div>
+        <p class="promo-text">Script Drag Drive Simulator Terbaik Sepanjang Masa!</p>
+
+        <div class="game-link-container">
+            <button class="btn-game-link" onclick="copyGameLink()">
+                <i class="fas fa-copy"></i> COPY GAME LINK
+            </button>
+        </div>
+
+        <div class="credits-card">
+            <h3>Credits & Management</h3>
+            <div class="credits-grid">
+                <div class="credit-item"><h4>Owner of Script</h4><p>Habill</p></div>
+                <div class="credit-item"><h4>Co-Owner</h4><p>MCA</p></div>
+                <div class="credit-item"><h4>Web Desainner</h4><p>Nazmii</p></div>
+                <div class="credit-item"><h4>Head Dev</h4><p>Abcd</p></div>
+                <div class="credit-item"><h4>Head Staff</h4><p>dapa</p></div>
+                <div class="credit-item"><h4>Head Staff 2</h4><p>zion</p></div>
+                <div class="credit-item"><h4>Head Staff 3</h4><p>Ibr</p></div>
+                <div class="credit-item"><h4>Staff</h4><p>Asfr</p></div>
+                <div class="credit-item"><h4>Staff 2</h4><p>Noware</p></div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://discord.gg/ZmXTKptCJ" target="_blank" class="btn-social discord"><i class="fab fa-discord"></i> DISCORD</a>
+            <a href="https://whatsapp.com/channel/0029Vb7EBEs9Gv7Mlycr4j10" target="_blank" class="btn-social whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+            <a href="https://www.tiktok.com/@billzzhub" target="_blank" class="btn-social tiktok"><i class="fab fa-tiktok"></i> TIKTOK</a>
+        </div>
+
+        <div class="feedback-section">
+            <h3>Komentar Player</h3>
+            <div class="feedback-form">
+                <input type="text" id="userName" placeholder="Nama Kamu">
+                <textarea id="userMsg" placeholder="Tulis feedback..."></textarea>
+                <button type="button" class="btn-send" onclick="addComment()">KIRIM KOMENTAR</button>
+            </div>
+            <div class="comments-display" id="commentsBox">
+                <div class="comment-item">
+                    <b>Admin Voidline</b>
+                    <p>Script ini 100% No Key! Silakan berikan dukungan kalian di kolom komentar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">VOIDLINE HUB • 2026 • THE REAL NO KEY SCRIPT</div>
+    </div>
+
+    <div id="toast">Link Game berhasil disalin!</div>
+
+    <script>
+        function copyGameLink() {
+            const gameURL = "https://www.roblox.com/id/games/131378148336503/Drag-Drive-Simulator";
+            navigator.clipboard.writeText(gameURL).then(() => {
+                const toast = document.getElementById("toast");
+                toast.className = "show";
+                setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            });
+        }
+
+        function addComment() {
+            const name = document.getElementById('userName').value;
+            const msg = document.getElementById('userMsg').value;
+            const box = document.getElementById('commentsBox');
+            if (name === "" || msg === "") return alert("Lengkapi data!");
+            const div = document.createElement('div');
+            div.className = 'comment-item';
+            div.innerHTML = `<b>${name}</b><p>${msg}</p>`;
+            box.insertBefore(div, box.firstChild);
+            document.getElementById('userName').value = "";
+            document.getElementById('userMsg').value = "";
+        }
+    </script>
+</body>
+</html>
